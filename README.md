@@ -1,4 +1,4 @@
-# DownloadImgs
+# DownloadImage
 Download images from url that likes http://avatar.csdn.net/1/3/B/1_li1325169021.jpg
 
 Thanks for 小光Y, he/she's code can run correctly. And it reduces the duplicate operations. 
