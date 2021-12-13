@@ -8,7 +8,7 @@ You can use for loop to download database that can read from web like the link a
 
 
 # Generate Image
-Generate images by Strings
+Generate images by Strings read data from txt file
 
 CommonUtil.java class is the util to control image's style, such as background's length and height, font style, font color, etc.
 
