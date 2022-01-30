@@ -1,7 +1,7 @@
 # AutoClick
 Click, double-click, right-click, type, wait, scroll wheel functions can be repeatedly completed in your thought.
 
-Author: @不高兴就喝水(bilibili)
+Author: [@不高兴就喝水](https://space.bilibili.com/412704776/?spm_id_from=333.999.0.0)
 
 Source Code: 链接：https://pan.baidu.com/s/1Gu8NbGlysaxMTdDKIHOabg 提取码：gcrr
 
