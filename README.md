@@ -23,6 +23,13 @@ Method:
 - Enter `python waterRPA.py` to run as 使用说明书1.docx
 
 # BYRBBS Spider
+
+### 2022-02-10: Add User Name and Comment Time Attributes.
+
+There are four columns in data csv file: title, user, time, comment. And each first comment of new title is the context of the title.
+
+---
+
 In cmd use pip command to install environment below:
 - pip install requests
 - pip install pyquery
