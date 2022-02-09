@@ -27,18 +27,22 @@ def article(pp,x_doc,session,my_header,writer,user):
             a_doc = pq(a_resp.text)
             com_texts = ''
             for com in a_doc.items('.a-content-wrap'):
+                com_user = re.search('<div class="a-content-wrap">(.*), 信区.*', str(com.eq(0)))
+                com_time = str(com.children().eq(1)).replace('<br/>', '')
+                #用正则剔除无效信息（只保留中文,。！？@：等符号）
+                com_time = ''.join([x for x in re.findall(r'[\u4e00-\u9fa5A-Z0-9a-z\,，。！!@？:\? \t\r]*', com_time)])
                 comment = str(com.children().eq(3)).replace('<br/>', '')
                 #用正则剔除无效信息（只保留中文,。！？@等符号）
                 comment = ''.join([x for x in re.findall(r'[\u4e00-\u9fa5A-Z0-9a-z\,，。！!@？\? \t\r]*', comment) if 'bd' not in x])
+                if comment == 't' or comment == 'bd':
+                    continue
                 if comment:
-                    com_texts+=comment+'\r'
-                print(pp,title,comment)
-            #写入csv文件
-            try:
-                writer.writerow((title,com_texts))
-            except:
-                pass
-
+                    print(pp,title,com_user.group(1),com_time,comment)
+                    # 写入csv文件
+                    try:
+                        writer.writerow((title, com_user.group(1), str(com_time), comment))
+                    except:
+                        pass
 
 def get_data(user, password, board,filename):
     """
@@ -79,7 +83,6 @@ def get_data(user, password, board,filename):
             #对该版块剩余页面的所有帖子进行抓取
             article(page,x_doc, session, my_header, writer, user)
     csvf.close()
-    
     
 user='userID'
 password='yourPassword'
