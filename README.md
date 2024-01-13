@@ -76,3 +76,15 @@ Test.java class is to generate images, pathname should be changed accordingly, I
 so please change to absolute pathname if you have no idea.
 
 In Test class, it reads one line each. There are two items in one line and seperate by '\t'(i.e tab), you can change them according to your txt file.
+
+# Email Send
+Using Email to watch your process is running or terminated when finished or errored.
+
+Use SMTP to send Email. You can find the information in your service provider.
+
+For example, if you use [outlook.com](https://support.microsoft.com/zh-cn/office/outlook-com-%E7%9A%84-pop-imap-%E5%92%8C-smtp-%E8%AE%BE%E7%BD%AE-d088b986-291d-42b8-9564-9c414e2aa040).
+
+```
+smtp.example.com = smtp-mail.outlook.com
+port = 587
+```
